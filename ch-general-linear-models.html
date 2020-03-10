@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 General linear models | _main.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 General linear models | _main.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 General linear models | _main.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="statistical-modeling-overview.html"/>
+<link rel="next" href="ch-nonlinear-models.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i><b>1.1</b> Getting help</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#this-is-version-1.0"><i class="fa fa-check"></i><b>1.2</b> This is Version 1.0</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>2</b> Summarizing data</a><ul>
+<li class="chapter" data-level="2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.2</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#data-visualization"><i class="fa fa-check"></i><b>2.3</b> Data visualization</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#visualizing-the-distribution-of-one-variable"><i class="fa fa-check"></i><b>2.3.1</b> Visualizing the distribution of one variable</a></li>
+<li class="chapter" data-level="2.3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#visualizing-two-variables"><i class="fa fa-check"></i><b>2.3.2</b> Visualizing two variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#publication-quality-graphics"><i class="fa fa-check"></i><b>2.4</b> Publication quality graphics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="summarizing-data.html"><a href="summarizing-data.html#par"><i class="fa fa-check"></i><b>2.4.1</b> par</a></li>
+<li class="chapter" data-level="2.4.2" data-path="summarizing-data.html"><a href="summarizing-data.html#annotations"><i class="fa fa-check"></i><b>2.4.2</b> Annotations</a></li>
+<li class="chapter" data-level="2.4.3" data-path="summarizing-data.html"><a href="summarizing-data.html#exporting-graphics"><i class="fa fa-check"></i><b>2.4.3</b> Exporting graphics</a></li>
+<li class="chapter" data-level="2.4.4" data-path="summarizing-data.html"><a href="summarizing-data.html#other-resources"><i class="fa fa-check"></i><b>2.4.4</b> Other resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="probability-distributions.html"><a href="probability-distributions.html"><i class="fa fa-check"></i><b>3</b> Probability distributions</a><ul>
+<li class="chapter" data-level="3.1" data-path="probability-distributions.html"><a href="probability-distributions.html#probability"><i class="fa fa-check"></i><b>3.1</b> Probability</a></li>
+<li class="chapter" data-level="3.2" data-path="probability-distributions.html"><a href="probability-distributions.html#sampling"><i class="fa fa-check"></i><b>3.2</b> Sampling</a></li>
+<li class="chapter" data-level="3.3" data-path="probability-distributions.html"><a href="probability-distributions.html#common-probability-distributions"><i class="fa fa-check"></i><b>3.3</b> Common probability distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistical-tests.html"><a href="statistical-tests.html"><i class="fa fa-check"></i><b>4</b> Statistical tests</a><ul>
+<li class="chapter" data-level="4.1" data-path="statistical-tests.html"><a href="statistical-tests.html#overview-1"><i class="fa fa-check"></i><b>4.1</b> Overview</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="statistical-tests.html"><a href="statistical-tests.html#large-sample-hypothesis-testing-with-a-normally-distributed-estimator"><i class="fa fa-check"></i><b>4.1.1</b> Large sample hypothesis testing with a normally distributed estimator</a></li>
+<li class="chapter" data-level="4.1.2" data-path="statistical-tests.html"><a href="statistical-tests.html#general-hypothesis-testing"><i class="fa fa-check"></i><b>4.1.2</b> General hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="statistical-tests.html"><a href="statistical-tests.html#single-sample-tests"><i class="fa fa-check"></i><b>4.2</b> Single sample tests</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="statistical-tests.html"><a href="statistical-tests.html#tests-for-population-mean-and-variance"><i class="fa fa-check"></i><b>4.2.1</b> Tests for population mean and variance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="statistical-tests.html"><a href="statistical-tests.html#tests-for-normality"><i class="fa fa-check"></i><b>4.2.2</b> Tests for normality</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="statistical-tests.html"><a href="statistical-tests.html#two-sample-tests"><i class="fa fa-check"></i><b>4.3</b> Two sample tests</a></li>
+<li class="chapter" data-level="4.4" data-path="statistical-tests.html"><a href="statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>4.4</b> Contingency tables</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html"><i class="fa fa-check"></i><b>5</b> Statistical modeling overview</a><ul>
+<li class="chapter" data-level="5.1" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#why-fit-a-model"><i class="fa fa-check"></i><b>5.1</b> Why fit a model?</a></li>
+<li class="chapter" data-level="5.2" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#getting-started"><i class="fa fa-check"></i><b>5.2</b> Getting started</a></li>
+<li class="chapter" data-level="5.3" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#overview-of-methods"><i class="fa fa-check"></i><b>5.3</b> Overview of methods</a></li>
+<li class="chapter" data-level="5.4" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#estimation-methods"><i class="fa fa-check"></i><b>5.4</b> Estimation methods</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#least-squares"><i class="fa fa-check"></i><b>5.4.1</b> Least squares</a></li>
+<li class="chapter" data-level="5.4.2" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#maximum-likelihood"><i class="fa fa-check"></i><b>5.4.2</b> Maximum likelihood</a></li>
+<li class="chapter" data-level="5.4.3" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#important-considerations"><i class="fa fa-check"></i><b>5.4.3</b> Important considerations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html"><i class="fa fa-check"></i><b>6</b> General linear models</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#definitions-and-assumptions"><i class="fa fa-check"></i><b>6.1</b> Definitions and assumptions</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#regression-anova-and-ancova"><i class="fa fa-check"></i><b>6.2</b> Regression, ANOVA, and ANCOVA</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#data-standardization"><i class="fa fa-check"></i><b>6.3</b> Data standardization</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#model-selection"><i class="fa fa-check"></i><b>6.4</b> Model selection</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#hypothesis-testing"><i class="fa fa-check"></i><b>6.4.1</b> Hypothesis testing</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#aic"><i class="fa fa-check"></i><b>6.4.2</b> AIC</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#diagnostics"><i class="fa fa-check"></i><b>6.5</b> Diagnostics</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#residuals"><i class="fa fa-check"></i><b>6.5.1</b> Residuals</a></li>
+<li class="chapter" data-level="6.5.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#coefficient-of-determination-r2"><i class="fa fa-check"></i><b>6.5.2</b> Coefficient of determination, <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#model-fitting-in-r"><i class="fa fa-check"></i><b>6.6</b> Model fitting in R</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#linear-regression"><i class="fa fa-check"></i><b>6.6.1</b> Linear regression</a></li>
+<li class="chapter" data-level="6.6.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#anova"><i class="fa fa-check"></i><b>6.6.2</b> ANOVA</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-nonlinear-models.html"><a href="ch-nonlinear-models.html"><i class="fa fa-check"></i><b>7</b> Nonlinear models</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-nonlinear-models.html"><a href="ch-nonlinear-models.html#why-distinguish-between-linear-and-nonlinear-models"><i class="fa fa-check"></i><b>7.1</b> Why distinguish between linear and nonlinear models?</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-nonlinear-models.html"><a href="ch-nonlinear-models.html#nonnormal-errors"><i class="fa fa-check"></i><b>7.2</b> Nonnormal errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>8</b> Resources</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-general-linear-models" class="section level1">
+<h1><span class="header-section-number">6</span> General linear models</h1>
+<div id="definitions-and-assumptions" class="section level2">
+<h2><span class="header-section-number">6.1</span> Definitions and assumptions</h2>
+<p>Linear models are models that are linear in the <em>parameters</em>, not necessarily the
+explanatory variables (see point 3 below for a concrete example of what this means).
+The three assumptions of linear models
+are:</p>
+<ol style="list-style-type: decimal">
+<li>All observations, <span class="math inline">\(Y_i\)</span>, are independent and identically distributed (iid).</li>
+<li>Errors are normally distributed with constant variance <span class="math inline">\(\sigma^2\)</span>:</li>
+</ol>
+<p><span class="math display">\[\begin{align}
+    Y_i = \mu_i + \epsilon_i, \hspace{5pt} \epsilon_i \sim N(0, \sigma^2).
+\end{align}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>There is a linear relationship between the dependent and independent variables.
+This means that the model is a linear function of the parameters to be estimated, not
+of the independent variables. For example, the following expression is quadratic in
+<span class="math inline">\(x\)</span>, but is linear in the parameters <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(\beta_2\)</span>:</li>
+</ol>
+<p><span class="math display">\[\begin{align}
+    \mu_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2.
+\end{align}\]</span></p>
+</div>
+<div id="regression-anova-and-ancova" class="section level2">
+<h2><span class="header-section-number">6.2</span> Regression, ANOVA, and ANCOVA</h2>
+<p>Regression, analysis of variance (ANOVA), and analysis of covariance (ANCOVA) all fall
+under the category of general linear models. They differ in the nature of the
+explanatory variables used, but follow the same basic model framework. In regression,
+all of the explanatory variables are continuous. In ANOVA, they are all categorical. A
+categorical variable takes on a limited number of possible
+values and is often qualitative rather than quantitative. A simple example is sex
+(with two possible values, male and female). In ANCOVA, there are both continuous and
+categorical variables.</p>
+<p>The goal of regression is to determine which explanatory variables impact the overall
+mean, while the goal of ANOVA is to compare the means of different groups (e.g.,
+different experimental treatment groups) against each other. In ANCOVA, we are again
+interested in determining which variables impact the overall mean, but we also take
+into account differences between groups.</p>
+<p>A quick note on categorical variables:
+In regression, categorical variables (a.k.a. factors) are handled by mapping them to a
+set of numeric variables known as contrasts. For example, if you have two levels of a
+categorical variable, <span class="math inline">\(x\)</span>, then within the model you can let <span class="math inline">\(x\)</span> map to 0 when it takes
+on the first level, and to 1 when it takes on the second level; this would be a
+<em>treatment</em> contrast, which is the default in R, though there are other options.</p>
+</div>
+<div id="data-standardization" class="section level2">
+<h2><span class="header-section-number">6.3</span> Data standardization</h2>
+<p>You will generally want to standardize numeric explanatory variables in order to
+help reduce uncertainty in your parameter estimates and potentially avoid computational
+problems if your original data values are really large or really small. This typically
+means subtracting the mean and dividing by the standard deviation:</p>
+<p><span class="math display">\[\begin{align}
+    x_{standardized} = \frac{x - \text{mean}(x)}{\text{sd}(x)}.
+\end{align}\]</span></p>
+</div>
+<div id="model-selection" class="section level2">
+<h2><span class="header-section-number">6.4</span> Model selection</h2>
+<div id="hypothesis-testing" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Hypothesis testing</h3>
+<p>We can investigate whether or not a variable should stay in the model by testing
+if its coefficient is equal to 0. As we’ll see a little later on, R can do this work for
+us, but if there are multiple variables in the model we have some options about how to
+proceed with a hypothesis test.</p>
+<p>For example, suppose the full model we’re considering has 3 explanatory variables,
+<span class="math inline">\(x\)</span>, <span class="math inline">\(w\)</span>, and <span class="math inline">\(z\)</span>. Then should we test if the coefficient of <span class="math inline">\(x\)</span> is zero when only
+<span class="math inline">\(x\)</span> is included in the model, or when both <span class="math inline">\(x\)</span> and <span class="math inline">\(w\)</span> are in the model, or <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span>,
+or all three variables? There isn’t a clear cut answer, but when you are carrying out a
+hypothesis test on one variable you should know what assumptions are being made about
+the inclusion or exclusion of the other variables.</p>
+<p>In statistics references, you’ll commonly see these categories of hypothesis testing
+procedures (among others):</p>
+<p><strong>Type I: Sequential sum of squares:</strong> Variables are added in to the model one at a
+time in a specific order, starting from an intercept-only model. The significance of a
+particular variables is then tested assuming the preceding variables are already in the
+model.</p>
+<p><strong>Type III: Partial sum of squares:</strong> The significance of a variable is tested assuming
+all the other variables are already in the model, excluding any terms (e.g.,
+interactions) that contain the variable being tested.</p>
+<p>So far we’ve been discussing testing the significance of a single coefficient. It’s
+possible to test more than one coefficient at a time, though we won’t cover that here.</p>
+</div>
+<div id="aic" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> AIC</h3>
+<p>Akaike’s information criteria (AIC) can be used to compare and rank nested models.
+Generally, two models are nested if one contains all the same terms as the other plus
+some additional terms. As a simple example, these two models are nested:</p>
+<p><span class="math display">\[\begin{align}
+    Y \sim \text{Normal}(\beta_0 + \beta_1 x + \beta_2 z, \sigma^2)
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+    Y \sim \text{Normal}(\beta_0 + \beta_1 x, \sigma^2)
+\end{align}\]</span></p>
+<p>AIC is calculated using the model log-likelihood, <span class="math inline">\(\mathcal{L}\)</span>, and the number of parameters in
+the model, <span class="math inline">\(p\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+    AIC = -2 \times \mathcal{L} + 2 \times (p + 1).
+\end{align}\]</span></p>
+<p>In general, a smaller AIC indicates a better fit. You can improve the fit by
+including more data (sometimes even with irrelevant data), so the second term,
+<span class="math inline">\(2 \times (p + 1)\)</span> serves as a penalty: if the increase in likelihood from adding more
+parameters doesn’t outweigh the penalty, AIC will increase. A general rule of thumb is
+that a change in AIC of at least 2 is signficant. Note that AIC is defined
+up to an additive constant that cancels out when you take the difference between two
+AIC values.</p>
+</div>
+</div>
+<div id="diagnostics" class="section level2">
+<h2><span class="header-section-number">6.5</span> Diagnostics</h2>
+<p>We use diagnostic tools to assess the goodness-of-fit of a model (that is, to
+investigate how well the model describes the data) and to look for model assumption
+violations, influential points, etc.</p>
+<div id="residuals" class="section level3">
+<h3><span class="header-section-number">6.5.1</span> Residuals</h3>
+<p>Residuals are one of the most useful diagnostic tools. For observation <span class="math inline">\(y_i\)</span> with
+model predicted (or fitted) value <span class="math inline">\(\hat{y}_i\)</span>, the corresponding residual is
+given by:</p>
+<p><span class="math display">\[\begin{align}
+    r_i = y_i - \hat{y}_i.
+\end{align}\]</span></p>
+<p>Patterns in residual plots can indicate poor fit and/or violation of the assumptions
+of normality and constant variance. Here’s a visual example. Both of the figures below
+show hypothetical residuals plotted against fitted values. The figure on the left shows
+pattern-free residuals centered around 0, which is what you want. The figure on the
+right shows residuals increasing as the fitted values increase, which is a sign that
+your constant variance assumption has been violated. Transforming your observations,
+<span class="math inline">\(y_i\)</span>, can sometimes help with this. For example, you could try fitting the model
+using <span class="math inline">\(\log(y_i)\)</span> or <span class="math inline">\(\sqrt{y_i}\)</span> in place of <span class="math inline">\(y_i\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:resid-plot-1"></span>
+<img src="main_files/figure-html/resid-plot-1-1.png" alt="Example residual vs. fitted value plots showing no pattern (left) and an increasing pattern (right)." width="768" />
+<p class="caption">
+Figure 6.1: Example residual vs. fitted value plots showing no pattern (left) and an increasing pattern (right).
+</p>
+</div>
+<p>These figures show hypothetical residuals plotted against the single explanatory
+variable <span class="math inline">\(x\)</span>. The left plot again shows no pattern, which is what you want, while the
+right plot shows curvature indicating that additional explanatory terms (for
+example, perhaps a quadratic term, <span class="math inline">\(x^2\)</span>) may be needed.</p>
+<div class="figure" style="text-align: center"><span id="fig:resid-plot-2"></span>
+<img src="main_files/figure-html/resid-plot-2-1.png" alt="Example residual vs. explanatory variable plots showing no pattern (left) and a curved pattern (right)." width="768" />
+<p class="caption">
+Figure 6.2: Example residual vs. explanatory variable plots showing no pattern (left) and a curved pattern (right).
+</p>
+</div>
+<p>To check the assumption that the errors are normally distributed, you can use a qq plot:</p>
+<div class="figure" style="text-align: center"><span id="fig:resid-plot-3"></span>
+<img src="main_files/figure-html/resid-plot-3-1.png" alt="Example residual qq plots showing agreement with normality (left) and a departure from normality (right)." width="768" />
+<p class="caption">
+Figure 6.3: Example residual qq plots showing agreement with normality (left) and a departure from normality (right).
+</p>
+</div>
+<p>We designed these examples so it would be relatively easy to spot the “good”
+(pattern free) versus “bad” (not pattern free) residual plots. In practice, it’ll be
+harder.</p>
+</div>
+<div id="coefficient-of-determination-r2" class="section level3">
+<h3><span class="header-section-number">6.5.2</span> Coefficient of determination, <span class="math inline">\(R^2\)</span></h3>
+<p>The coefficient of determination, <span class="math inline">\(R^2\)</span>, is the proportion of the total variation in the
+response variable, <span class="math inline">\(Y\)</span>, that is accounted for by a regression model. The way it is
+defined, <span class="math inline">\(R^2\)</span> will fall between 0 and 1, and generally, the closer to 1 it is the
+“better” (conditional on other model diagnostics looking ok). The coefficient of
+determination can often be increased by putting more variables into the model, so
+people will sometimes use an adjusted <span class="math inline">\(R^2\)</span>, <span class="math inline">\(R^2_{adj}\)</span>, that takes into account the
+number of observations and number of model parameters, and can decrease as the
+number of model parameters increases.</p>
+</div>
+</div>
+<div id="model-fitting-in-r" class="section level2">
+<h2><span class="header-section-number">6.6</span> Model fitting in R</h2>
+<div id="linear-regression" class="section level3">
+<h3><span class="header-section-number">6.6.1</span> Linear regression</h3>
+<p>Here’s an example of fitting linear regression models in R. The data are contained in
+a data frame called <code>dat</code>. There are 40 observations. Below we show the first six rows
+of the data set and a plot of the dependent variable versus the independent variable:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">head</span>(dat)</a></code></pre></div>
+<pre><code>##           x         y
+## 1  3.982630  8.212405
+## 2  5.581858  6.364092
+## 3  8.592800  4.731792
+## 4 13.623117 10.394223
+## 5  3.025229  7.532588
+## 6 13.475845 23.079144</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">plot</span>(dat<span class="op">$</span>x, dat<span class="op">$</span>y, <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;y&quot;</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-18"></span>
+<img src="main_files/figure-html/unnamed-chunk-18-1.png" alt="Data from the linear regression example." width="432" />
+<p class="caption">
+Figure 6.4: Data from the linear regression example.
+</p>
+</div>
+<p>Suppose we start by fitting a simple linear regression (the term “simple linear
+regression” just means that there’s at most one explanatory variable). The model
+looks like this:</p>
+<p><span class="math display">\[\begin{align}
+    Y \sim \text{Normal}(\beta_0 + \beta_1 x, \sigma^2).
+\end{align}\]</span></p>
+<p>We can use the function <code>lm()</code> to fit the model. The first argument is a formula
+describing the model, starting with the name of the response variable, in this case <code>y</code>,
+followed by a tilde, <code>~</code>, then the independent variable terms separated by plus signs, <code>+</code>.
+Here we only have one independent variable, <code>x</code>. The second argument is the name of
+the data frame in which to find the variables, in this case <code>dat</code>.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">## Fit the model using the function lm():</a>
+<a class="sourceLine" id="cb66-2" data-line-number="2">fit0 &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>x, dat)</a></code></pre></div>
+<p>Printing out the model object directly will show the parameter estimates:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">fit0</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x, data = dat)
+## 
+## Coefficients:
+## (Intercept)            x  
+##      -1.016        1.329</code></pre>
+<p>Pass it to the <code>summary()</code> function to get more information like coefficient standard
+errors, p-values from partial sum of squares tests on the coefficients,
+<span class="math inline">\(R^2\)</span> values, and the p-value from an F test on the overall fit of the model relative
+to a model with only an intercept (the null hypothesis is that this model and an
+intercept-only model describe the data equally well).</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="kw">summary</span>(fit0)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x, data = dat)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -14.7331  -6.2604  -0.1834   5.4225  14.5125 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -1.0163     2.5510  -0.398    0.693    
+## x             1.3292     0.2911   4.567 5.09e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.644 on 38 degrees of freedom
+## Multiple R-squared:  0.3543, Adjusted R-squared:  0.3373 
+## F-statistic: 20.85 on 1 and 38 DF,  p-value: 5.088e-05</code></pre>
+<p>Running the funtion <code>anova()</code> on an <code>lm</code> object will carry out sequential sum of
+squares:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="kw">anova</span>(fit0)</a></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: y
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## x          1 1218.6 1218.57  20.854 5.088e-05 ***
+## Residuals 38 2220.4   58.43                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Calling the <code>plot()</code> function on an <code>lm</code> object will produce four diagnostic plots:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2"><span class="kw">plot</span>(fit0)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-23"></span>
+<img src="main_files/figure-html/unnamed-chunk-23-1.png" alt="Diagnostic plots produced by plot()." width="768" />
+<p class="caption">
+Figure 6.5: Diagnostic plots produced by plot().
+</p>
+</div>
+<p>The top two panels in the figure above are a residual and Q-Q plot like we saw before.
+The bottom left panel shows (square root) standardized residuals against fitted values;
+if there is a pattern in the residuals, this may indicate the constant variance
+assumption has been violated (this kind of plot is similar to the one in the first
+panel). The bottom right plot shows standardized residuals against leverage, which is a
+measure of how influential a point is. The higher the leverage, the more of an effect a
+given point has on the overall fit. The <code>plot()</code> function will label points with
+particularly high leverage.</p>
+<p>There’s a clear U-shaped pattern in our residuals. Looking at our plot of <span class="math inline">\(y\)</span> versus <span class="math inline">\(x\)</span>
+again, it appears that <span class="math inline">\(y\)</span> is a nonlinear function of <span class="math inline">\(x\)</span>, so we may want to try fitting a
+polynomial model. Let’s try a cubic polynomial model:</p>
+<p><span class="math display">\[\begin{align}
+    Y \sim \text{Normal}(\beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3, \sigma^2).
+\end{align}\]</span></p>
+<p>We can start by standardizing the numeric variable <span class="math inline">\(x\)</span> (this is important for polynomial
+variables):</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">    <span class="co"># You can standardize data manually:</span></a>
+<a class="sourceLine" id="cb74-2" data-line-number="2">    dat<span class="op">$</span>xx &lt;-<span class="st"> </span>(dat<span class="op">$</span>x <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(dat<span class="op">$</span>x))<span class="op">/</span><span class="kw">sd</span>(dat<span class="op">$</span>x)</a>
+<a class="sourceLine" id="cb74-3" data-line-number="3">    </a>
+<a class="sourceLine" id="cb74-4" data-line-number="4">    <span class="co"># Or maybe use a built-in function:</span></a>
+<a class="sourceLine" id="cb74-5" data-line-number="5">    <span class="co"># dat$xx &lt;- scale(dat$x)[ ,1]</span></a></code></pre></div>
+<p>You could define <span class="math inline">\(x^2\)</span> and <span class="math inline">\(x^3\)</span> fields in <code>dat</code> and use those, or you can use the
+function <code>I()</code>, which allows you to define new model terms on the fly.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">## Fit the model using the function lm():</a>
+<a class="sourceLine" id="cb75-2" data-line-number="2">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>xx <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(xx<span class="op">^</span><span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(xx<span class="op">^</span><span class="dv">3</span>), dat)</a></code></pre></div>
+<p>Look at a summary of the new model:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">summary</span>(fit)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ xx + I(xx^2) + I(xx^3), data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -12.254  -3.301   1.051   3.812  13.270 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  3.86687    1.40352   2.755  0.00915 ** 
+## xx           5.75648    2.21053   2.604  0.01330 *  
+## I(xx^2)      5.51284    1.06910   5.157  9.3e-06 ***
+## I(xx^3)     -0.06259    1.12583  -0.056  0.95598    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.949 on 36 degrees of freedom
+## Multiple R-squared:  0.6295, Adjusted R-squared:  0.5987 
+## F-statistic: 20.39 on 3 and 36 DF,  p-value: 6.796e-08</code></pre>
+<p>Maybe look at the sequential sum of squares for the new model:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">anova</span>(fit)</a></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: y
+##           Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+## xx         1 1218.57 1218.57 34.4341 1.043e-06 ***
+## I(xx^2)    1  946.35  946.35 26.7417 8.895e-06 ***
+## I(xx^3)    1    0.11    0.11  0.0031     0.956    
+## Residuals 36 1273.99   35.39                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>The function <code>AIC()</code> will calculate AIC. Our results so far indicate that the cubic term
+is not contributing to the model fit so let’s fit a model without it and recalculate AIC:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(y <span class="op">~</span><span class="st"> </span>xx <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(xx<span class="op">^</span><span class="dv">2</span>), dat)</a>
+<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="kw">AIC</span>(fit2)</a></code></pre></div>
+<pre><code>## [1] 259.9596</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">summary</span>(fit2)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ xx + I(xx^2), data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -12.276  -3.319   1.017   3.845  13.322 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   3.8637     1.3833   2.793  0.00822 ** 
+## xx            5.6456     0.9397   6.008 6.13e-07 ***
+## I(xx^2)       5.5167     1.0523   5.242 6.66e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.868 on 37 degrees of freedom
+## Multiple R-squared:  0.6295, Adjusted R-squared:  0.6095 
+## F-statistic: 31.43 on 2 and 37 DF,  p-value: 1.052e-08</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="kw">AIC</span>(fit)<span class="op">-</span><span class="st"> </span><span class="kw">AIC</span>(fit2)</a></code></pre></div>
+<pre><code>## [1] 1.996566</code></pre>
+<p>There was a change in AIC of approximately 2 and now all of our model terms are
+significant at the 0.01 level (based on partial sum of squares).</p>
+<p>The function <code>stepAIC()</code> attempts to find the “best” model by stepping through different
+subsets of the model you pass it and comparing their AIC values. (Using <code>stepAIC</code> is
+overkill for this simple example, but that’s ok.)</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">library</span>(MASS)</a>
+<a class="sourceLine" id="cb86-2" data-line-number="2">MASS<span class="op">::</span><span class="kw">stepAIC</span>(fit)</a></code></pre></div>
+<pre><code>## Start:  AIC=146.44
+## y ~ xx + I(xx^2) + I(xx^3)
+## 
+##           Df Sum of Sq    RSS    AIC
+## - I(xx^3)  1      0.11 1274.1 144.44
+## &lt;none&gt;                 1274.0 146.44
+## - xx       1    239.98 1514.0 151.34
+## - I(xx^2)  1    940.98 2215.0 166.56
+## 
+## Step:  AIC=144.44
+## y ~ xx + I(xx^2)
+## 
+##           Df Sum of Sq    RSS    AIC
+## &lt;none&gt;                 1274.1 144.44
+## - I(xx^2)  1    946.35 2220.4 164.66
+## - xx       1   1242.88 2517.0 169.68</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ xx + I(xx^2), data = dat)
+## 
+## Coefficients:
+## (Intercept)           xx      I(xx^2)  
+##       3.864        5.646        5.517</code></pre>
+<p>This is also indicating that the simpler quadratic model in <span class="math inline">\(x\)</span> is adequate.</p>
+<p>It’s helpful to know how to extract information from model objects:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">## Extracting model components:</a>
+<a class="sourceLine" id="cb89-2" data-line-number="2"><span class="kw">names</span>(fit)</a></code></pre></div>
+<pre><code>##  [1] &quot;coefficients&quot;  &quot;residuals&quot;     &quot;effects&quot;       &quot;rank&quot;         
+##  [5] &quot;fitted.values&quot; &quot;assign&quot;        &quot;qr&quot;            &quot;df.residual&quot;  
+##  [9] &quot;xlevels&quot;       &quot;call&quot;          &quot;terms&quot;         &quot;model&quot;</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">fit<span class="op">$</span>coefficients</a></code></pre></div>
+<pre><code>## (Intercept)          xx     I(xx^2)     I(xx^3) 
+##  3.86686591  5.75648381  5.51283699 -0.06258567</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">fit<span class="op">$</span>residuals</a></code></pre></div>
+<pre><code>##           1           2           3           4           5           6 
+##   5.0654230   3.9906433  -0.5708063 -12.2535686   3.1377245   1.1557533 
+##           7           8           9          10          11          12 
+##   1.0631925 -10.9362873  -4.1717943   2.3165524   8.2963689  -1.8365220 
+##          13          14          15          16          17          18 
+##   2.2431129  -1.8607570  -9.4589799  -4.2441089  -3.0103251   2.4201994 
+##          19          20          21          22          23          24 
+##   6.2156793   5.5912555   0.8665530  -3.0065450   4.1823478   2.9809425 
+##          25          26          27          28          29          30 
+##  -6.1922101  -6.4362827   2.2140174   3.8954107   0.4175585   4.6962755 
+##          31          32          33          34          35          36 
+##   1.4118222  -5.2588421   1.0386600  -9.0560737  10.7685309  13.2698814 
+##          37          38          39          40 
+##  -2.1646544  -8.1458956   3.7844070  -2.4186589</code></pre>
+<p>The function <code>lm()</code> produces fitted values calculated with the data used to fit the
+model. If you want model predicted values for different inputs, you can use the
+<code>predict()</code> function.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">fit<span class="op">$</span>fitted.values</a></code></pre></div>
+<pre><code>##         1         2         3         4         5         6         7 
+##  3.146982  2.373449  5.302598 22.647792  4.394864 21.923391 25.451043 
+##         8         9        10        11        12        13        14 
+##  8.362105  7.136444  9.211083  4.292381  5.048558  9.481249  2.388288 
+##        15        16        17        18        19        20        21 
+## 13.634199  3.541260 10.906267 29.344335  2.380953 14.062368 24.667051 
+##        22        23        24        25        26        27        28 
+##  4.149822  7.994944  6.659285  3.121638  2.392783 11.549160  2.384907 
+##        29        30        31        32        33        34        35 
+## 19.879903  2.433371  3.274612  6.118521  3.466924  4.786313 17.068511 
+##        36        37        38        39        40 
+##  8.679584 15.035886  7.304134 11.205334  2.497690</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="co"># The new data should be in a data frame with the same field names used in the model:</span></a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">new_data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&quot;xx&quot;</span>=<span class="kw">seq</span>(<span class="dt">from=</span><span class="kw">min</span>(dat<span class="op">$</span>xx), <span class="dt">to=</span><span class="kw">max</span>(dat<span class="op">$</span>xx), <span class="dt">by=</span><span class="fl">0.1</span>))</a>
+<a class="sourceLine" id="cb97-3" data-line-number="3">new_data<span class="op">$</span>predicted_y &lt;-<span class="st"> </span><span class="kw">predict</span>(fit, <span class="dt">newdata=</span>new_data)</a>
+<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="kw">head</span>(new_data)</a></code></pre></div>
+<pre><code>##          xx predicted_y
+## 1 -1.787513   11.549160
+## 2 -1.687513   10.152385
+## 3 -1.587513    8.872203
+## 4 -1.487513    7.708240
+## 5 -1.387513    6.660119
+## 6 -1.287513    5.727465</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">plot</span>(dat<span class="op">$</span>xx, dat<span class="op">$</span>y)</a>
+<a class="sourceLine" id="cb99-2" data-line-number="2"><span class="kw">points</span>(dat<span class="op">$</span>xx, fit<span class="op">$</span>fitted.values, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb99-3" data-line-number="3"><span class="kw">points</span>(new_data<span class="op">$</span>xx, new_data<span class="op">$</span>predicted_y, <span class="dt">col=</span><span class="st">&quot;orange&quot;</span>)</a>
+<a class="sourceLine" id="cb99-4" data-line-number="4"><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;Observation&quot;</span>,<span class="st">&quot;Predicted values from lm()&quot;</span>,</a>
+<a class="sourceLine" id="cb99-5" data-line-number="5">                                        <span class="st">&quot;Predicted values from predict()&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;orange&quot;</span>),</a>
+<a class="sourceLine" id="cb99-6" data-line-number="6">            <span class="dt">pch=</span><span class="dv">1</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-31"></span>
+<img src="main_files/figure-html/unnamed-chunk-31-1.png" alt="Observations and model predicted values." width="480" />
+<p class="caption">
+Figure 6.6: Observations and model predicted values.
+</p>
+</div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">vcov</span>(fit)</a></code></pre></div>
+<pre><code>##             (Intercept)        xx     I(xx^2)     I(xx^3)
+## (Intercept)  1.96985585  0.102523 -1.11361583 -0.06420251
+## xx           0.10252304  4.886465 -0.12787903 -2.24573658
+## I(xx^2)     -1.11361583 -0.127879  1.14296630  0.07867607
+## I(xx^3)     -0.06420251 -2.245737  0.07867607  1.26750372</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">summary</span>(fit))</a></code></pre></div>
+<pre><code>##  [1] &quot;call&quot;          &quot;terms&quot;         &quot;residuals&quot;     &quot;coefficients&quot; 
+##  [5] &quot;aliased&quot;       &quot;sigma&quot;         &quot;df&quot;            &quot;r.squared&quot;    
+##  [9] &quot;adj.r.squared&quot; &quot;fstatistic&quot;    &quot;cov.unscaled&quot;</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="kw">summary</span>(fit)<span class="op">$</span>r.squared</a></code></pre></div>
+<pre><code>## [1] 0.6295491</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1"><span class="kw">summary</span>(fit)<span class="op">$</span>adj.r.squared</a></code></pre></div>
+<pre><code>## [1] 0.5986782</code></pre>
+<p>Calling the <code>plot()</code> function on an <code>lm</code> object will produce four diagnostic plots:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb108-2" data-line-number="2"><span class="kw">plot</span>(fit)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:ex-simple-lin-reg-11"></span>
+<img src="main_files/figure-html/ex-simple-lin-reg-11-1.png" alt="Diagnostic plots produced by plot()." width="768" />
+<p class="caption">
+Figure 6.7: Diagnostic plots produced by plot().
+</p>
+</div>
+<p>These residual plots look better than before since they don’t reflect a clear pattern.</p>
+</div>
+<div id="anova" class="section level3">
+<h3><span class="header-section-number">6.6.2</span> ANOVA</h3>
+<p>For an ANOVA example we’ll use the <code>yields</code> data set from <span class="citation">Crawley (<a href="#ref-Crawley2013">2013</a>)</span>. These data
+reflect an experiment in which crop yield per unit area is investigated for
+different soil types (sand, clay, or loam) with other factors (e.g., seed variety,
+fertilizer, etc.) consistent between soil plots. There are 10 observations for each
+soil type. Here are the data:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1">yields &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;yields.txt&quot;</span>), <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb109-2" data-line-number="2">yields</a></code></pre></div>
+<pre><code>##    sand clay loam
+## 1     6   17   13
+## 2    10   15   16
+## 3     8    3    9
+## 4     6   11   12
+## 5    14   14   15
+## 6    17   12   16
+## 7     9   12   17
+## 8    11    8   13
+## 9     7   10   18
+## 10   11   13   14</code></pre>
+<p>We’re interested in whether mean yield differs by soil type. To get a feel for the data
+we can calculate the group means and variances:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">sapply</span>(yields, mean)</a></code></pre></div>
+<pre><code>## sand clay loam 
+##  9.9 11.5 14.3</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="kw">sapply</span>(yields, var)</a></code></pre></div>
+<pre><code>##      sand      clay      loam 
+## 12.544444 15.388889  7.122222</code></pre>
+<p>and use <code>boxplot()</code> to plot the data:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">boxplot</span>(yields, <span class="dt">col=</span><span class="st">&quot;green3&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Yield&quot;</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-36"></span>
+<img src="main_files/figure-html/unnamed-chunk-36-1.png" alt="Boxplot of the crop yield data." width="480" />
+<p class="caption">
+Figure 6.8: Boxplot of the crop yield data.
+</p>
+</div>
+<p>The boxes for sand and loam don’t overlap, so that’s a hint that there may be a
+difference between those groups, but it’s hard to tell for clay.</p>
+<p>The data set is currently in what we call “wide” format because the groups are
+represented in separate columns. For passing the data to model fitting functions, it
+will be helpful to have it into “long” format, which we can accomplish with the
+<code>stack()</code> function:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1">yields_long &lt;-<span class="st"> </span><span class="kw">stack</span>(yields)</a>
+<a class="sourceLine" id="cb116-2" data-line-number="2"><span class="kw">head</span>(yields_long)</a></code></pre></div>
+<pre><code>##   values  ind
+## 1      6 sand
+## 2     10 sand
+## 3      8 sand
+## 4      6 sand
+## 5     14 sand
+## 6     17 sand</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="co"># Give yields_long more useful names:</span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="kw">names</span>(yields_long) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Yield&quot;</span>,<span class="st">&quot;SoilType&quot;</span>)</a>
+<a class="sourceLine" id="cb118-3" data-line-number="3"><span class="kw">head</span>(yields_long)</a></code></pre></div>
+<pre><code>##   Yield SoilType
+## 1     6     sand
+## 2    10     sand
+## 3     8     sand
+## 4     6     sand
+## 5    14     sand
+## 6    17     sand</code></pre>
+<p>The underlying assumptions for ANOVA are that the populations are normally distributed
+and variance is constant (which implies that each group has the same variance). The data
+look satisfactorily normal:</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">qqnorm</span>(yields_long<span class="op">$</span>Yield)</a>
+<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="kw">qqline</span>(yields_long<span class="op">$</span>Yield, <span class="dt">lty=</span><span class="dv">2</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-38"></span>
+<img src="main_files/figure-html/unnamed-chunk-38-1.png" alt="Checking normality of the crop yield data." width="480" />
+<p class="caption">
+Figure 6.9: Checking normality of the crop yield data.
+</p>
+</div>
+<p>We can test the equal variance assumption using <code>fligner.test()</code>, which tests the null
+hypothesis that the variances in the groups are the same:</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="kw">fligner.test</span>(Yield <span class="op">~</span><span class="st"> </span>SoilType, <span class="dt">data=</span>yields_long)</a></code></pre></div>
+<pre><code>## 
+##  Fligner-Killeen test of homogeneity of variances
+## 
+## data:  Yield by SoilType
+## Fligner-Killeen:med chi-squared = 0.36507, df = 2, p-value =
+## 0.8332</code></pre>
+<p>The p-value, 0.8332, is relatively large (above any typical significance level, e.g.,
+0.01, 0.05, 0.1, etc.), so we fail to reject the null hypothesis that the group variances
+are the same.</p>
+<p>Now we can use <code>aov()</code> or <code>lm()</code> to carry out the ANOVA:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">yield_aov &lt;-<span class="st"> </span><span class="kw">aov</span>(Yield <span class="op">~</span><span class="st"> </span>SoilType, <span class="dt">data=</span>yields_long)</a>
+<a class="sourceLine" id="cb123-2" data-line-number="2"><span class="kw">summary</span>(yield_aov)</a></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## SoilType     2   99.2   49.60   4.245  0.025 *
+## Residuals   27  315.5   11.69                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>The degrees of freedom for the treatment (i.e., SoilType) sum of squares is equal to
+the number of treatments groups minus 1, 3 - 1 = 2. The degrees of freedom for the
+error sum of squares is the total number of observations minus the number of
+treatment groups, 30 - 3 = 27. And finally, the total degrees of freedom (not shown
+as part of the output of <code>summary()</code>) is the total number of observations minus 1,
+30 - 1 = 29. The null hypothesis for the F test run by <code>summary()</code> is that the
+treatment means are not significantly different and the alternative hypothesis is that
+at least one of the means is different (without specifying which one(s) are different).
+There’s a relatively small probability of getting the results we got (0.025) assuming
+the null hypothesis is true, so we reject the null hypothesis and conclude that not all
+of the treatment means are the same.</p>
+<p>You can also check the ANOVA assumptions after fitting the model using <code>plot()</code>:</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb125-2" data-line-number="2"><span class="kw">plot</span>(yield_aov)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-41"></span>
+<img src="main_files/figure-html/unnamed-chunk-41-1.png" alt="Diagnostic plots for the ANVOA model." width="768" />
+<p class="caption">
+Figure 6.10: Diagnostic plots for the ANVOA model.
+</p>
+</div>
+<p>Patterns in the top left panel would indicate a violation of the constant variance
+assumption and non-normality would be reflected in the top right panel. The standardized
+residuals in the bottom two panels look ok and there don’t appear to be influential
+points.</p>
+<p>We said above that we could use <code>lm()</code> instead of <code>aov()</code>. This is because linear
+regression and ANOVA are fundamentally the same thing; they just differ in the nature
+of the explanatory variables.</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">yield_lm &lt;-<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st"> </span>SoilType, <span class="dt">data=</span>yields_long)</a>
+<a class="sourceLine" id="cb126-2" data-line-number="2"><span class="kw">summary</span>(yield_lm)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Yield ~ SoilType, data = yields_long)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##   -8.5   -1.8    0.3    1.7    7.1 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     9.900      1.081   9.158 9.04e-10 ***
+## SoilTypeclay    1.600      1.529   1.047  0.30456    
+## SoilTypeloam    4.400      1.529   2.878  0.00773 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.418 on 27 degrees of freedom
+## Multiple R-squared:  0.2392, Adjusted R-squared:  0.1829 
+## F-statistic: 4.245 on 2 and 27 DF,  p-value: 0.02495</code></pre>
+<p>The output of this call to <code>summary()</code> is a little different than before. The “Intercept”
+estimate represents the mean yield for the sand group, while the SoilTypeclay estimate
+represents the difference between the mean yield of sand and clay. Similarly, the
+SoilTypeloam estimate represents the difference between the mean yield of sand and loam.
+To verify this, we could recalculate our group means:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="kw">sapply</span>(yields, mean)</a></code></pre></div>
+<pre><code>## sand clay loam 
+##  9.9 11.5 14.3</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="kw">sapply</span>(yields, mean) <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(yields<span class="op">$</span>sand)</a></code></pre></div>
+<pre><code>## sand clay loam 
+##  0.0  1.6  4.4</code></pre>
+<p>When differences between group means are tested in this way its known as a treatment
+contrast.</p>
+<p>The F test at the bottom of the output of <code>summary(yield_lm)</code> tests the null hypothesis
+that an intercept-only model fits the data as well as this model. Note that an
+intercept-only model implies that the treatment groups all have the same mean, which is
+what we wanted to test (and did test once already using <code>aov()</code>). As expected, the
+p-value is the same as we found before (0.025) so we reject the hypothesis that the
+treatment means are all the same.</p>
+<p>It’ll matter whether you use <code>aov()</code> or <code>lm()</code> if you have pseudoreplication, for
+example if repeated measurements are taken on the same individual. We won’t go into the
+details of pseudoreplication here, but know that the <code>Error()</code> function
+(<code>?Error</code>) exists for handling this case.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Crawley2013">
+<p>Crawley, Michael J. 2013. <em>The R Book</em>. United Kingdom: John Wiley &amp; Sons, Ltd. <a href="http://www.bio.ic.ac.uk/research/mjcraw/therbook/index.htm" class="uri">http://www.bio.ic.ac.uk/research/mjcraw/therbook/index.htm</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="statistical-modeling-overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-nonlinear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

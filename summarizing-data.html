@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Summarizing data | _main.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Summarizing data | _main.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Summarizing data | _main.utf8.md" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="probability-distributions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i><b>1.1</b> Getting help</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#this-is-version-1.0"><i class="fa fa-check"></i><b>1.2</b> This is Version 1.0</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>2</b> Summarizing data</a><ul>
+<li class="chapter" data-level="2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.2</b> Descriptive statistics</a></li>
+<li class="chapter" data-level="2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#data-visualization"><i class="fa fa-check"></i><b>2.3</b> Data visualization</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#visualizing-the-distribution-of-one-variable"><i class="fa fa-check"></i><b>2.3.1</b> Visualizing the distribution of one variable</a></li>
+<li class="chapter" data-level="2.3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#visualizing-two-variables"><i class="fa fa-check"></i><b>2.3.2</b> Visualizing two variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#publication-quality-graphics"><i class="fa fa-check"></i><b>2.4</b> Publication quality graphics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="summarizing-data.html"><a href="summarizing-data.html#par"><i class="fa fa-check"></i><b>2.4.1</b> par</a></li>
+<li class="chapter" data-level="2.4.2" data-path="summarizing-data.html"><a href="summarizing-data.html#annotations"><i class="fa fa-check"></i><b>2.4.2</b> Annotations</a></li>
+<li class="chapter" data-level="2.4.3" data-path="summarizing-data.html"><a href="summarizing-data.html#exporting-graphics"><i class="fa fa-check"></i><b>2.4.3</b> Exporting graphics</a></li>
+<li class="chapter" data-level="2.4.4" data-path="summarizing-data.html"><a href="summarizing-data.html#other-resources"><i class="fa fa-check"></i><b>2.4.4</b> Other resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="probability-distributions.html"><a href="probability-distributions.html"><i class="fa fa-check"></i><b>3</b> Probability distributions</a><ul>
+<li class="chapter" data-level="3.1" data-path="probability-distributions.html"><a href="probability-distributions.html#probability"><i class="fa fa-check"></i><b>3.1</b> Probability</a></li>
+<li class="chapter" data-level="3.2" data-path="probability-distributions.html"><a href="probability-distributions.html#sampling"><i class="fa fa-check"></i><b>3.2</b> Sampling</a></li>
+<li class="chapter" data-level="3.3" data-path="probability-distributions.html"><a href="probability-distributions.html#common-probability-distributions"><i class="fa fa-check"></i><b>3.3</b> Common probability distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="statistical-tests.html"><a href="statistical-tests.html"><i class="fa fa-check"></i><b>4</b> Statistical tests</a><ul>
+<li class="chapter" data-level="4.1" data-path="statistical-tests.html"><a href="statistical-tests.html#overview-1"><i class="fa fa-check"></i><b>4.1</b> Overview</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="statistical-tests.html"><a href="statistical-tests.html#large-sample-hypothesis-testing-with-a-normally-distributed-estimator"><i class="fa fa-check"></i><b>4.1.1</b> Large sample hypothesis testing with a normally distributed estimator</a></li>
+<li class="chapter" data-level="4.1.2" data-path="statistical-tests.html"><a href="statistical-tests.html#general-hypothesis-testing"><i class="fa fa-check"></i><b>4.1.2</b> General hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="statistical-tests.html"><a href="statistical-tests.html#single-sample-tests"><i class="fa fa-check"></i><b>4.2</b> Single sample tests</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="statistical-tests.html"><a href="statistical-tests.html#tests-for-population-mean-and-variance"><i class="fa fa-check"></i><b>4.2.1</b> Tests for population mean and variance</a></li>
+<li class="chapter" data-level="4.2.2" data-path="statistical-tests.html"><a href="statistical-tests.html#tests-for-normality"><i class="fa fa-check"></i><b>4.2.2</b> Tests for normality</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="statistical-tests.html"><a href="statistical-tests.html#two-sample-tests"><i class="fa fa-check"></i><b>4.3</b> Two sample tests</a></li>
+<li class="chapter" data-level="4.4" data-path="statistical-tests.html"><a href="statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>4.4</b> Contingency tables</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html"><i class="fa fa-check"></i><b>5</b> Statistical modeling overview</a><ul>
+<li class="chapter" data-level="5.1" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#why-fit-a-model"><i class="fa fa-check"></i><b>5.1</b> Why fit a model?</a></li>
+<li class="chapter" data-level="5.2" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#getting-started"><i class="fa fa-check"></i><b>5.2</b> Getting started</a></li>
+<li class="chapter" data-level="5.3" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#overview-of-methods"><i class="fa fa-check"></i><b>5.3</b> Overview of methods</a></li>
+<li class="chapter" data-level="5.4" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#estimation-methods"><i class="fa fa-check"></i><b>5.4</b> Estimation methods</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#least-squares"><i class="fa fa-check"></i><b>5.4.1</b> Least squares</a></li>
+<li class="chapter" data-level="5.4.2" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#maximum-likelihood"><i class="fa fa-check"></i><b>5.4.2</b> Maximum likelihood</a></li>
+<li class="chapter" data-level="5.4.3" data-path="statistical-modeling-overview.html"><a href="statistical-modeling-overview.html#important-considerations"><i class="fa fa-check"></i><b>5.4.3</b> Important considerations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html"><i class="fa fa-check"></i><b>6</b> General linear models</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#definitions-and-assumptions"><i class="fa fa-check"></i><b>6.1</b> Definitions and assumptions</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#regression-anova-and-ancova"><i class="fa fa-check"></i><b>6.2</b> Regression, ANOVA, and ANCOVA</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#data-standardization"><i class="fa fa-check"></i><b>6.3</b> Data standardization</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#model-selection"><i class="fa fa-check"></i><b>6.4</b> Model selection</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#hypothesis-testing"><i class="fa fa-check"></i><b>6.4.1</b> Hypothesis testing</a></li>
+<li class="chapter" data-level="6.4.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#aic"><i class="fa fa-check"></i><b>6.4.2</b> AIC</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#diagnostics"><i class="fa fa-check"></i><b>6.5</b> Diagnostics</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#residuals"><i class="fa fa-check"></i><b>6.5.1</b> Residuals</a></li>
+<li class="chapter" data-level="6.5.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#coefficient-of-determination-r2"><i class="fa fa-check"></i><b>6.5.2</b> Coefficient of determination, <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#model-fitting-in-r"><i class="fa fa-check"></i><b>6.6</b> Model fitting in R</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#linear-regression"><i class="fa fa-check"></i><b>6.6.1</b> Linear regression</a></li>
+<li class="chapter" data-level="6.6.2" data-path="ch-general-linear-models.html"><a href="ch-general-linear-models.html#anova"><i class="fa fa-check"></i><b>6.6.2</b> ANOVA</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-nonlinear-models.html"><a href="ch-nonlinear-models.html"><i class="fa fa-check"></i><b>7</b> Nonlinear models</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-nonlinear-models.html"><a href="ch-nonlinear-models.html#why-distinguish-between-linear-and-nonlinear-models"><i class="fa fa-check"></i><b>7.1</b> Why distinguish between linear and nonlinear models?</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-nonlinear-models.html"><a href="ch-nonlinear-models.html#nonnormal-errors"><i class="fa fa-check"></i><b>7.2</b> Nonnormal errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>8</b> Resources</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="summarizing-data" class="section level1">
+<h1><span class="header-section-number">2</span> Summarizing data</h1>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">2.1</span> Overview</h2>
+<p>Summarizing data is a way to get a general picture of the information contained in a dataset. The goal is to simplify the information, rather than focusing on the details. One analogy would be looking at a landscape from an airplane, rather than standing on the ground. From an airplane you can see the general features of the landscape- maybe pick out the floodplane of a river or see the edge of a city- that might be difficult to determine from the ground where you’re seeing details like trees, roads, and street signs. It’s important to start your analysis with this 30,000 foot view because it provides context for the details that we’ll be investigating later on.</p>
+</div>
+<div id="descriptive-statistics" class="section level2">
+<h2><span class="header-section-number">2.2</span> Descriptive statistics</h2>
+<p>There are a few essential characteristics of data that will become important when we talk about hypothesis testing and building linear models.</p>
+<p>Many of you will already be familiar with the concepts of summarizing data so we will use this section to also introduce the basics of the R coding language. R is a powerful tool for data manipulation, visualization, and analysis. R has many built-in calculations that you can use to help describe your data.</p>
+<p><strong>Types of Data</strong></p>
+<p>There are three basic types of data:</p>
+<ol style="list-style-type: decimal">
+<li>Numeric data (“numeric”in R)
+<ul>
+<li>Consists of a numbers and those numbers hold a numeric value (not categories that are identified by a number)</li>
+<li>Continuous data are data where any value is possible within the range, including decimals. For example, water depth is a continuous form of data.</li>
+<li>Interval data are numeric data, but data can only take specific values (usually integers) at regularly spaced intervals. For example, counts of fish are interval data because we usually can’t count partial fish.</li>
+</ul></li>
+<li>Categorical data (“factors” in R)
+<ul>
+<li>Consists of data that are labeled by categories (e.g., yes/no or fish/mammal/bird).</li>
+<li>R calls the categories “factors” and it treats them differently than numeric data. More on that later, though.</li>
+<li>Caution: sometimes categorical data is labeled with numbers when we record them in a dataset (e.g., Treatments 1, 2, and 3). Be on the look out for these when you start analyzing your dataset!</li>
+</ul></li>
+<li>Ordinal data (“ordered factors” in R)
+<ul>
+<li>Consists of ordered categories (e.g. high/medium/low)</li>
+<li>We won’t focus on this type of data in this course, but we’re mentioning it here so you know that it exists.</li>
+</ul></li>
+</ol>
+<p><strong>The Center of your Data</strong></p>
+<ol style="list-style-type: decimal">
+<li>Mean</li>
+</ol>
+<p>When we say “mean” we’re usually referring to the arithmetic mean, or the “average” of a set of values. There are other types of means (e.g., the geometric mean), but we’re not concerned with those today. In statistics, it’s usually the arithmetic mean:</p>
+<p><span class="math inline">\({\frac {1}{n}}\sum _{i=1}^{n}a_{i}={\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}\)</span></p>
+<p>The mean of a population is often represented by <span class="math inline">\(\mu\)</span> (the greek letter “mu”). A sample mean is often represented by <span class="math inline">\(\bar x\)</span>.</p>
+<p>R has a built-in fuction for calculating the mean of a set of values. The function is “mean” and it takes one argument (a list of values) inside of the parentheses.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>))</a></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">15</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">15</span>, <span class="dv">6</span>))</a></code></pre></div>
+<pre><code>## [1] 9.692308</code></pre>
+<p>The arguments for the first two lines above are equivalent. In R, 1:10 is shorthand for a list of the numbers one through ten.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Median</li>
+</ol>
+<p>Median is the middle observation of a dataset. There are an equal number of observations above and below the median. The function median is similar to the function mean in that it takes a single argument, which is also a list of values.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">median</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">median</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>))</a></code></pre></div>
+<pre><code>## [1] 5.5</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">median</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">15</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">15</span>, <span class="dv">6</span>))</a></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<p>Notice that the mean and median are different for the third set of numbers.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Mode</li>
+</ol>
+<p>The mode is the most common value in a dataset. This concept is generally most useful for categorical data, where you might want to see which category is most common. We will demonstrate the concept using the third set of values above.</p>
+<p>Unlike mean and median, R does not have a built-in function to identify the mode of a dataset. It does have a function called “mode,” but you’ll see that it identifies characteristics of the data itself. In this case, it tell us that our list is numeric. You can find the mode of a small set of values by using the table function. table returns a count of the number of times each value appears in your list of values.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># the mode function in R does not calculate the mode of the data</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">mode</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">15</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">15</span>, <span class="dv">6</span>))</a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># the table function tells you the frequency of each value</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">table</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">15</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">15</span>, <span class="dv">6</span>))</a></code></pre></div>
+<pre><code>## 
+##  1  2  3  4  6  7  8 15 19 25 
+##  1  1  1  1  2  1  1  3  1  1</code></pre>
+<p>For a larger set of values, you would not want to look through a large table. You can write a couple of lines of code to find the value with the largest count.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># For ease, let&#39;s give our list a name</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">15</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">15</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">15</span>, <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="co"># What is the most times any number appears in our data?</span></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="kw">max</span>(<span class="kw">table</span>(x))</a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co"># Which value in the table appears 3 times?</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="kw">table</span>(x)[<span class="kw">which</span>(<span class="kw">table</span>(x) <span class="op">==</span><span class="st"> </span><span class="dv">3</span>)]</a></code></pre></div>
+<pre><code>## 15 
+##  3</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co"># Or you could use one line of code</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">names</span>(<span class="kw">table</span>(x))[<span class="kw">table</span>(x)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(x))]</a></code></pre></div>
+<pre><code>## [1] &quot;15&quot;</code></pre>
+<p>An application where mode comes up in ecology is a bimodal distribution. A bimodal distribution means that the data has two values that are very common. This means that the mean and median values do not represent the most common or most expected values in your dataset. In the figure below, the most common value is 30, but the data has a second mode at 67. These values are both more common than the mean, which is 48.5.</p>
+<div class="figure" style="text-align: center"><span id="fig:bimodal-fig"></span>
+<img src="main_files/figure-html/bimodal-fig-1.png" alt="A bimodal data distribution (solid black line) with dotted vertical lines indicating the mean (grey) and two modes (black)" width="480" />
+<p class="caption">
+Figure 2.1: A bimodal data distribution (solid black line) with dotted vertical lines indicating the mean (grey) and two modes (black)
+</p>
+</div>
+<p><strong>Symmetry</strong></p>
+<p>Data symmetry means that the two sides of a distribution look roughly the same. If a distribution is not symmetrical, it might be skewed to one side. For example, the figure below shows a symmetric distribution and a distribution with a long right tail (right skewed).</p>
+<div class="figure" style="text-align: center"><span id="fig:symmetry-fig"></span>
+<img src="main_files/figure-html/symmetry-fig-1.png" alt="A symmetric data distribution (black) and a right skewed distribution (grey)" width="480" />
+<p class="caption">
+Figure 2.2: A symmetric data distribution (black) and a right skewed distribution (grey)
+</p>
+</div>
+<p>We will assess symmetry more in the data visualization section. One mathematical indication that data are skewed is if the mean and median are not very close in value. Using the same skewed distribution as above, the figure below shows that the mean of the distribution is larger than the median. This happens because the mean is more sensitive to extreme values than the median. If the mean is lower than the median, it indicates that the data are left-skewed. If you find that the mean and median are very different, it is important to investigate whether a single (or a few) extreme values are causing the skew. In the case where a few values are very high or very low, it is a good idea to investigate the data to see if there is a problem (e.g., a typo or equiment malfunction) before deciding how to proceed.</p>
+<div class="figure" style="text-align: center"><span id="fig:math-skew-fig"></span>
+<img src="main_files/figure-html/math-skew-fig-1.png" alt="A right skewed distribution (solid black line) with vertical dotted lines indicating the mean (black) and median (median)." width="480" />
+<p class="caption">
+Figure 2.3: A right skewed distribution (solid black line) with vertical dotted lines indicating the mean (black) and median (median).
+</p>
+</div>
+<p><strong>Variability or Spread</strong></p>
+<p>The amount of variability or spread in a dataset is also very important. Two sets of data with the same mean might have very different amounts of variability.</p>
+<p>Summarizing the variability is the basis for calculating confidence intervals around means, comparing two or more datasets, building models, detecting changes over time, and many, many other things you might want to do with the data you collect. Understanding variability is a key to understanding more complex concepts.</p>
+<ol style="list-style-type: decimal">
+<li>Variance</li>
+</ol>
+<p>Variance is often represented with <span class="math inline">\(\sigma^2\)</span> (greek letter sigma, squared). We won’t worry about calculating variance by hand, but here is the equation for sample variance for reference:</p>
+<p><span class="math inline">\(\sigma^2 = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \bar{x})^2} {n-1}\)</span></p>
+<p>where <span class="math inline">\(\bar{x}\)</span> is the mean of the data, using the formula given earlier.</p>
+<p>R can calculate variance for us using the function var. Here are two examples:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">var</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</a></code></pre></div>
+<pre><code>## [1] 841.6667</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">var</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>)</a></code></pre></div>
+<pre><code>## [1] 3350</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Standard Deviation</li>
+</ol>
+<p>The standard deviation is another way we talk about varibility in a dataset. We often represent standard devaion as SD or <span class="math inline">\(\sigma\)</span> beacuse it is equal to the square root of the variance of a dataset:</p>
+<p><span class="math inline">\(SD = \sqrt{\sigma^2}\)</span></p>
+<p>R can also calculate standard deviation for us, using the fucntion sd:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">sd</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</a></code></pre></div>
+<pre><code>## [1] 29.01149</code></pre>
+<p>We can show that the sd function gives the same answer as if we manually take the square root of the variance. This is also another example of nesting functions in R. Here, the argument to sqrt is the function var with the argument 1:100.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">sqrt</span>(<span class="kw">var</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>))</a></code></pre></div>
+<pre><code>## [1] 29.01149</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Coefficient of Variation</li>
+</ol>
+<p>The coefficient of variation (CV) is a measurement of the amount of variability in a dataset, relative to the mean. It’s usually expressed as a percentage.</p>
+<p><span class="math inline">\(CV = \frac{SD}{\bar{x}}\cdot100\%\)</span></p>
+<p>CV is useful for comparing data with different means and variability or data with different units because it expresses the amount of variability in terms of the mean. For example, you might want to compare the variability in two environmental measurements. Maybe you want to compare the variability in water depth and water temperature in a pond. You can use the CV to compare variability, even though depth and temperature are measured in different units and they might have different means.</p>
+<p>R does not have a built-in function for CV, but we can write code to calculate it:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="co"># Create a list of values</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="co"># Write the equation for CV, using the functions sd and mean</span></a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="dv">100</span><span class="op">*</span><span class="kw">sd</span>(x)<span class="op">/</span><span class="kw">mean</span>(x)</a></code></pre></div>
+<pre><code>## [1] 57.4485</code></pre>
+<p><strong>Helpful R Function: summary</strong></p>
+<p>The function summary is a generic function, which means that it can summarize many different kinds of arguments. If the argument that you give it is a list of numeric values, it calculates a 6-number summary of the data distribution.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">summary</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1.00   25.75   50.50   50.50   75.25  100.00</code></pre>
+<p>If the argument is a list made up of words (characters), summary will tell you how many things are in the list and that it’s made up of characters.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">summary</span>(<span class="kw">c</span>(<span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;mammal&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;mammal&quot;</span>, <span class="st">&quot;bird&quot;</span>))</a></code></pre></div>
+<pre><code>##    Length     Class      Mode 
+##        10 character character</code></pre>
+<p>If you wanted R to treat the words as categories (factors), you can explicitly tell R that by nesting the function as.factor inside of summary. The as.factor function will convert the list of words to a list of factors. (In R jargon, “convert” is often referred to as “coerce.”) When the argument to summary is a list of factors, summary returns the frequency of each factor level.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">summary</span>(<span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;mammal&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;mammal&quot;</span>, <span class="st">&quot;bird&quot;</span>)))</a></code></pre></div>
+<pre><code>##   bird   fish mammal 
+##      2      6      2</code></pre>
+<p>In this case, the output from summary is similar to the output from table that we saw earlier.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">table</span>(<span class="kw">c</span>(<span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;mammal&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;fish&quot;</span>, <span class="st">&quot;mammal&quot;</span>, <span class="st">&quot;bird&quot;</span>))</a></code></pre></div>
+<pre><code>## 
+##   bird   fish mammal 
+##      2      6      2</code></pre>
+</div>
+<div id="data-visualization" class="section level2">
+<h2><span class="header-section-number">2.3</span> Data visualization</h2>
+<p>One of the best ways to get an overview of a dataset is to graph it. Graphing data helps you see patterns that might be important for your analysis and it gives you a broader context for any of the summary statistics that we just talked about. In this section, we will discuss some ways to graph (or plot) data and the information that each type of graph can help you find. Many tutorials and text books will beg you to “graph your data first”.</p>
+<p>There are many ways to make graphs in R. The biggest debate you’ll hear is “base graphics” v. “ggplot”. Each have their strengths, but we’re going to use base graphics (i.e., the built-in graphics package that comes with R) in this course. Why? We don’t have time to do both so we picked one.</p>
+<p>Keep in mind that making graphs is an iterative process. You’ll almost never make a graph in one try. Instead, plan on making a graph and then adjusting the code until the graph matches what you wanted to produce.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="co"># Make a toy dataset to work with</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">21</span>) <span class="co"># make sure we always use the same values for reproducibility</span></a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">fish &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">group =</span> <span class="kw">as.factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;salmon&quot;</span>, <span class="st">&quot;bass&quot;</span>, <span class="st">&quot;smelt&quot;</span>), <span class="dt">each =</span> <span class="dv">20</span>)),</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">                   <span class="dt">fl =</span> <span class="kw">c</span>(<span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">100</span>, <span class="dt">sd =</span> <span class="dv">15</span>),</a>
+<a class="sourceLine" id="cb41-5" data-line-number="5">                          <span class="kw">rpois</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">lambda =</span> <span class="dv">65</span>),</a>
+<a class="sourceLine" id="cb41-6" data-line-number="6">                          <span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">20</span>, <span class="dt">mean =</span> <span class="dv">30</span>, <span class="dt">sd =</span> <span class="dv">10</span>)))</a>
+<a class="sourceLine" id="cb41-7" data-line-number="7">fish<span class="op">$</span>sal =<span class="st"> </span><span class="dv">30</span><span class="op">*</span>(fish<span class="op">$</span>fl<span class="op">/</span><span class="kw">max</span>(fish<span class="op">$</span>fl)) <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">60</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb41-8" data-line-number="8"><span class="co"># view the first few rows of data</span></a>
+<a class="sourceLine" id="cb41-9" data-line-number="9"><span class="kw">head</span>(fish)</a></code></pre></div>
+<pre><code>##    group        fl      sal
+## 1 salmon 111.89520 26.20020
+## 2 salmon 107.83377 44.30955
+## 3 salmon 126.19333 41.18596
+## 4 salmon  80.92996 30.86207
+## 5 salmon 132.96084 40.58935
+## 6 salmon 106.49696 34.41806</code></pre>
+<p>Above, we made a dataset named “fish” which has three variables: “group”, “fl”, which is short for fork length, and “sal”, which is short for salinity. We can use the summary function to learn about the dataset “fish”:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">summary</span>(fish)</a></code></pre></div>
+<pre><code>##     group          fl               sal        
+##  bass  :20   Min.   :  5.651   Min.   : 5.355  
+##  salmon:20   1st Qu.: 36.584   1st Qu.:16.351  
+##  smelt :20   Median : 66.924   Median :25.425  
+##              Mean   : 65.727   Mean   :24.595  
+##              3rd Qu.: 89.116   3rd Qu.:30.427  
+##              Max.   :132.961   Max.   :44.310</code></pre>
+<p>When we pass the dataset name to the summary function, it summarizes each variable in the dataset, just like if we passed it each variable separately. Since “group” is a factor, summary told us that there are 20 of each level in the dataset. Since “fl” and “sal” are numeric, it gave us a 6-number summary.</p>
+<div id="visualizing-the-distribution-of-one-variable" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Visualizing the distribution of one variable</h3>
+<p>Let’s make some visual summaries of the numeric variable “fl”. For now we’re not interested in the groups.</p>
+<p><strong>Histograms</strong><br />
+A histogram groups the data into bins and the heights of the bars show the frequency of each bin (i.e., the count of values from your data that fall into each bin). Histograms are useful for looking at the shape of the distribution of the data. You can see things like the center, spread, and symmetry of the data.</p>
+<p>We’ll use the function hist to make a histogram. We’re going to use what is known as “dollar sign notation” to specify that the dataset fish contains the variable fl. It looks like this: “fish$fl”. A generic form is “dataset$variable”.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">hist</span>(fish<span class="op">$</span>fl)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/hist1_fig-1.png" alt="A histogram of fork length, using the default settings." width="480" />
+<p class="caption">
+(#fig:hist1_fig)A histogram of fork length, using the default settings.
+</p>
+</div>
+<p>The center of fl is around 70 and it’s fairly symmetrical. Maybe those boxes are a little too wide for our taste. We want to look at smaller bins, so let’s add an argument to hist that will make the boxes narrower.</p>
+<p>In R, when a function takes more than one argument, the arguments are separated by commas. In the example below, we’re naming the arguments “x” and “breaks” so that R will know which argument is which. If you aren’t sure which arguments a function can take, use the help in R. Use a question mark to search for a function. For example, “?hist” will bring up the help file for the hist function, with a list of the arguments that the function can take.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">hist</span>(<span class="dt">x =</span> fish<span class="op">$</span>fl, <span class="dt">breaks =</span> <span class="dv">16</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/hist2_fig-1.png" alt="A histogram of fork length with narrower bins." width="480" />
+<p class="caption">
+(#fig:hist2_fig)A histogram of fork length with narrower bins.
+</p>
+</div>
+<p><strong>Boxplots</strong><br />
+Boxplots are another good way to see the center, spread, and symmetry of your data. They can also help you identify extreme values.</p>
+<p>The heavy line in the middle is the median. The top and bottom of the box are the third and first quartiles, respectively. This is called the “interquartile range” and it shows the middle half of the data. The whiskers are 1.5 times the distance between the first and third quartiles. If there are any extreme values outside the whiskers, they are marked with circles. The width of the box is not meaningful.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">boxplot</span>(fish<span class="op">$</span>fl)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/boxplot1_fig-1.png" alt="A boxplot of fork length." width="480" />
+<p class="caption">
+(#fig:boxplot1_fig)A boxplot of fork length.
+</p>
+</div>
+<p>This data looks fairly symmetrical. The median line is pretty close to the center of the box. It’s a little higher than the center, but not very much. The whiskers are a little different in length, but we don’t have any extreme values.</p>
+<p>What if we want to look at a separate boxplot for each group? The boxplot function takes a formula for its first argument. The generic form of the formula is y ~ group, where y is your numeric variable of interest and group is the grouping variable. You still use the dollar sign notation, like we did before. Notice that we use the dataset name “fish” for both variables.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">boxplot</span>(fish<span class="op">$</span>fl <span class="op">~</span><span class="st"> </span>fish<span class="op">$</span>group)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/boxplot2_fig-1.png" alt="A boxplot of fork lengths divided into groups." width="480" />
+<p class="caption">
+(#fig:boxplot2_fig)A boxplot of fork lengths divided into groups.
+</p>
+</div>
+<p><strong>Q-Q Plots</strong></p>
+<p>One question that comes up a lot is “are these data normal”? Often, we care about whether data is normally distributed because a statistical test that we are considering using assumes that the data are normally distributed.</p>
+<p>Q-Q Plots are a way to compare your data to a normal distribution. Q-Q stands for quantile-quantile, and you can think of it as “normal distribution quantiles v. sample quantiles”. Anywhere the points fall above the line, it means the value is more frequent than expected in a normal distribution. Below the line means it’s less frequent.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="co"># draw the graph of your data in Q-Q format</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="kw">qqnorm</span>(fish<span class="op">$</span>fl)</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="co"># add a line that represents a perfectly normal dataset</span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="kw">qqline</span>(fish<span class="op">$</span>fl, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:qq-fig"></span>
+<img src="main_files/figure-html/qq-fig-1.png" alt="A normal Q-Q plot of fork length." width="480" />
+<p class="caption">
+Figure 2.4: A normal Q-Q plot of fork length.
+</p>
+</div>
+<p>The middle of our data is pretty close to the line, but the two ends fall away from the line. There are more low values (fork lengths in the 20s) than we would expect and fewer high values than we would expect.</p>
+</div>
+<div id="visualizing-two-variables" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Visualizing two variables</h3>
+<p>Plotting two variables together is a good way to look for relationships between variables. Some things to note when you plot two variables:
+1. Do the points make a pattern (like a line or a curve) or are there points all over the plot?
+2. If there is a pattern, is there a lot of scatter around it?
+3. Are there more points on one area of the plot?
+4. Are there any “funky” points that don’t fit the overall pattern? These might be mistakes or outliers and they need to be investigated.</p>
+<p>Keep in mind that human brains are very good at picking out patterns. It’s entirely possible to “see” something in the data that isn’t real or isn’t very influential. That’s why we will use quantitative methods for picking out patterns. (See the sections on inference and linear models.)</p>
+<p><strong>Scatterplots</strong></p>
+<p>The plot function makes graphs of two variables. The most basic type is a scatterplot.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">plot</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/scatter1_fig-1.png" alt="A scatter plot of salinity and fork length, using the default settings in the plot function." width="576" />
+<p class="caption">
+(#fig:scatter1_fig)A scatter plot of salinity and fork length, using the default settings in the plot function.
+</p>
+</div>
+<p><strong>Line Plots</strong></p>
+<p>R can also make a graph where the data are connected by lines, still using the function plot. Here, we specify type = “l” to tell R that we want a line graph.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="co"># sort the data in order of salinity</span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">fish &lt;-<span class="st"> </span>fish[<span class="kw">order</span>(fish<span class="op">$</span>sal),]</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="co"># draw a plot of the data connected by lines</span></a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="kw">plot</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl,</a>
+<a class="sourceLine" id="cb51-6" data-line-number="6">     <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/scatter2_fig-1.png" alt="A line plot of salinity and fork length, using the default settings in the plot function." width="576" />
+<p class="caption">
+(#fig:scatter2_fig)A line plot of salinity and fork length, using the default settings in the plot function.
+</p>
+</div>
+<p><strong>Bar Plots</strong></p>
+<p>For categorical variables, you might want to graph the count of different groups in your data. We can create a bar graph of our fish group data using the functions barplot and table. This figure is pretty boring because each of the groups appears 20 times, but it gives you an idea of how the code works.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(fish<span class="op">$</span>group))</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/barplot_fig-1.png" alt="A bar plot of fish groups." width="576" />
+<p class="caption">
+(#fig:barplot_fig)A bar plot of fish groups.
+</p>
+</div>
+</div>
+</div>
+<div id="publication-quality-graphics" class="section level2">
+<h2><span class="header-section-number">2.4</span> Publication quality graphics</h2>
+<div id="par" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> par</h3>
+<p>The function par sets graphical parameters. There are many options and you can use ?par to view them all. Here, we have a few of the options that we use the most. Some of these parameters can also be set within a plot function. The option cex changes different things, depending on whether it is in a par() statement before a plot or within the plot() statement itself.</p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="17%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Options</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>bty</td>
+<td>o, l, 7, c, u, j</td>
+<td>sets the shape of the box around the plot area. The shape of the letter describes which lines are drawn and which aren’t.</td>
+</tr>
+<tr class="even">
+<td>cex</td>
+<td>a number</td>
+<td>scales the size of symbols and text</td>
+</tr>
+<tr class="odd">
+<td>lwd</td>
+<td>an integer, usually 1:5</td>
+<td>sets the width of lines</td>
+</tr>
+<tr class="even">
+<td>lty</td>
+<td>1:6</td>
+<td>changes the line type 1 is solid, others are kinds of dashes</td>
+</tr>
+<tr class="odd">
+<td>mar</td>
+<td>default: c(5, 4, 4, 2)+0.1</td>
+<td>sets the width of the margins around a plot in the order bottom, left, top, right.</td>
+</tr>
+<tr class="even">
+<td>mfrow</td>
+<td>any number of rows and columns</td>
+<td>makes a grid of plots in the form c(nr, nc)</td>
+</tr>
+<tr class="odd">
+<td>new</td>
+<td>TRUE plots over the previous plot</td>
+<td>lets you add new data to your plot</td>
+</tr>
+<tr class="even">
+<td>pch</td>
+<td>integers 1:25</td>
+<td>changes point symbols. See ?points for more information</td>
+</tr>
+<tr class="odd">
+<td>xaxs, yaxs</td>
+<td>i</td>
+<td>makes the x and y axis cross at 0 with no padding</td>
+</tr>
+<tr class="even">
+<td>xaxt, yaxt</td>
+<td>“n”</td>
+<td>plots without drawing the x or y axis</td>
+</tr>
+<tr class="odd">
+<td>xlab, ylab</td>
+<td>text, in quotes</td>
+<td>sets the x and y axis labels</td>
+</tr>
+<tr class="even">
+<td>xlog, ylog</td>
+<td>TRUE or FALSE</td>
+<td>TRUE makes the axis plot on a log scale (or use log = “x”)</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s try out some of these parameters on our scatterplot example from earlier.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.5</span>) <span class="co">#magnifies plot by 1.5 times</span></a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="kw">plot</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl,</a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">     <span class="dt">pch =</span> <span class="dv">17</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="co">#makes the markers red triangles</span></a>
+<a class="sourceLine" id="cb53-4" data-line-number="4">     <span class="dt">xlab =</span> <span class="st">&quot;Salinity (psu)&quot;</span>,</a>
+<a class="sourceLine" id="cb53-5" data-line-number="5">     <span class="dt">ylab =</span> <span class="st">&quot;Fork Lengh (mm)&quot;</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/scatter3_fig-1.png" alt="A scatter plot of salinity and fork length, with red triangles for markers." width="576" />
+<p class="caption">
+(#fig:scatter3_fig)A scatter plot of salinity and fork length, with red triangles for markers.
+</p>
+</div>
+</div>
+<div id="annotations" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Annotations</h3>
+<p>The text function labels points. You write the plot function first and then the text function to put the text on top of the plot. The position options are 1, 2, 3, or 4 for bottom, left, top, right, respectively.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">plot</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl,</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">     <span class="dt">pch =</span> <span class="dv">17</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="co">#makes the markers red triangles</span></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3">     <span class="dt">xlab =</span> <span class="st">&quot;Salinity (psu)&quot;</span>,</a>
+<a class="sourceLine" id="cb54-4" data-line-number="4">     <span class="dt">ylab =</span> <span class="st">&quot;Fork Lengh (mm)&quot;</span>)</a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="kw">text</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl, <span class="co">#matches x and y in plot()</span></a>
+<a class="sourceLine" id="cb54-6" data-line-number="6">     <span class="dt">labels =</span> fish<span class="op">$</span>group,</a>
+<a class="sourceLine" id="cb54-7" data-line-number="7">     <span class="dt">pos =</span> <span class="dv">1</span>, <span class="co">#places text below the points.</span></a>
+<a class="sourceLine" id="cb54-8" data-line-number="8">     <span class="dt">cex =</span> <span class="fl">0.8</span>) <span class="co">#makes the text smaller</span></a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/scatter4_fig-1.png" alt="A scatter plot of salinity and fork length, with red triangle markers and group labels." width="576" />
+<p class="caption">
+(#fig:scatter4_fig)A scatter plot of salinity and fork length, with red triangle markers and group labels.
+</p>
+</div>
+<p>We can also change the colors based on the groups in our dataset by setting the color option to our group variable.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">plot</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl,</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">     <span class="dt">pch =</span> <span class="dv">17</span>, <span class="dt">col =</span> fish<span class="op">$</span>group, <span class="co">#makes the markers red triangles</span></a>
+<a class="sourceLine" id="cb55-3" data-line-number="3">     <span class="dt">xlab =</span> <span class="st">&quot;Salinity (psu)&quot;</span>,</a>
+<a class="sourceLine" id="cb55-4" data-line-number="4">     <span class="dt">ylab =</span> <span class="st">&quot;Fork Lengh (mm)&quot;</span>)</a>
+<a class="sourceLine" id="cb55-5" data-line-number="5"><span class="kw">text</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl,</a>
+<a class="sourceLine" id="cb55-6" data-line-number="6">     <span class="dt">labels =</span> fish<span class="op">$</span>group,</a>
+<a class="sourceLine" id="cb55-7" data-line-number="7">     <span class="dt">pos =</span> <span class="dv">1</span>, <span class="co">#places text below the points.</span></a>
+<a class="sourceLine" id="cb55-8" data-line-number="8">     <span class="dt">cex =</span> <span class="fl">0.8</span>) <span class="co">#makes the text smaller</span></a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/scatter5_fig-1.png" alt="A scatter plot of salinity and fork length, with different colored symbols and text labels." width="576" />
+<p class="caption">
+(#fig:scatter5_fig)A scatter plot of salinity and fork length, with different colored symbols and text labels.
+</p>
+</div>
+<p>Maybe we want a cleaner look with a legend for the colors instead of text labels. And we want to change the symbols because the default colors aren’t colorblind friendly.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">cex =</span> <span class="fl">1.3</span>) <span class="co">#magnify the symbols</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="kw">plot</span>(<span class="dt">x =</span> fish<span class="op">$</span>sal, <span class="dt">y =</span> fish<span class="op">$</span>fl,</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">     <span class="dt">pch =</span> <span class="kw">as.numeric</span>(fish<span class="op">$</span>group), <span class="co">#makes the colors vary by group. Need to coerce the factor levels to numbers.</span></a>
+<a class="sourceLine" id="cb56-4" data-line-number="4">     <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="co">#make the symbols thicker</span></a>
+<a class="sourceLine" id="cb56-5" data-line-number="5">     <span class="dt">col =</span> fish<span class="op">$</span>group, <span class="co">#makes the markers vary by group. You could also coerce these to numbers, but works this way, too.</span></a>
+<a class="sourceLine" id="cb56-6" data-line-number="6">     <span class="dt">xlab =</span> <span class="st">&quot;Salinity (psu)&quot;</span>,</a>
+<a class="sourceLine" id="cb56-7" data-line-number="7">     <span class="dt">ylab =</span> <span class="st">&quot;Fork Lengh (mm)&quot;</span>,</a>
+<a class="sourceLine" id="cb56-8" data-line-number="8">     <span class="dt">bty =</span> <span class="st">&quot;l&quot;</span>)</a>
+<a class="sourceLine" id="cb56-9" data-line-number="9"><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">pch =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">pt.lwd =</span> <span class="dv">2</span>, <span class="dt">legend =</span> <span class="kw">levels</span>(fish<span class="op">$</span>group))</a></code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="main_files/figure-html/scatter6_fig-1.png" alt="A scatter plot of salinity and fork length, that might be ready to go into a report." width="576" />
+<p class="caption">
+(#fig:scatter6_fig)A scatter plot of salinity and fork length, that might be ready to go into a report.
+</p>
+</div>
+</div>
+<div id="exporting-graphics" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Exporting graphics</h3>
+<p>R can export figures as .bmp, .jpg, .tiff, .png, and .pdf files. There are functions to write each of these types of files and they are all pretty similar, with a few arguments that are specific to each one. We’ll give an example of writing a .png file. For each type of file, you write three chunks of code: the graphics device (png in this case), the code that makes the graph, and a function that closes the graphics device. It looks like this:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="co"># # 1. graphics window</span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="co"># png(filename = plot.png, </span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="co">#     width = 6, height = 4, units = &quot;in&quot;, #4x6 inch figure</span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="co">#     res = 90, #resolution = 90 ppi</span></a>
+<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="co">#     bg = NA) #backround color = clear</span></a>
+<a class="sourceLine" id="cb57-6" data-line-number="6"><span class="co"># # 2. plot code</span></a>
+<a class="sourceLine" id="cb57-7" data-line-number="7"><span class="co"># par(cex = 1.1) #magnify a little bit</span></a>
+<a class="sourceLine" id="cb57-8" data-line-number="8"><span class="co"># plot(x = fish$sal, y = fish$fl,</span></a>
+<a class="sourceLine" id="cb57-9" data-line-number="9"><span class="co">#      pch = as.numeric(fish$group), #makes the colors vary by group. Need to coerce the factor levels to numbers.</span></a>
+<a class="sourceLine" id="cb57-10" data-line-number="10"><span class="co">#      col = fish$group, #makes the markers vary by group. You could also coerce these to numbers, but works this way, too.</span></a>
+<a class="sourceLine" id="cb57-11" data-line-number="11"><span class="co">#      xlab = &quot;Salinity (psu)&quot;,</span></a>
+<a class="sourceLine" id="cb57-12" data-line-number="12"><span class="co">#      ylab = &quot;Fork Lengh (mm)&quot;)</span></a>
+<a class="sourceLine" id="cb57-13" data-line-number="13"><span class="co"># legend(&quot;topleft&quot;, pch = 1:3, col = 1:3, legend = levels(fish$group))</span></a>
+<a class="sourceLine" id="cb57-14" data-line-number="14"><span class="co"># </span></a>
+<a class="sourceLine" id="cb57-15" data-line-number="15"><span class="co"># # 3. close the graphics window to finish writing the file</span></a>
+<a class="sourceLine" id="cb57-16" data-line-number="16"><span class="co"># dev.off()</span></a></code></pre></div>
+<p>The code above is commented out so that loading this document doesn’t write an image file. You can run the code by copying it into your console without the leading # on each line.</p>
+</div>
+<div id="other-resources" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Other resources</h3>
+<p>We can’t fit everything here that you’ll need and there are already a lot of great summaries out there. Here are a few that we’ve found. Choose your favorite references and keep them handy.</p>
+<ul>
+<li><p><a href="https://www.statmethods.net/">QuickR</a></p></li>
+<li><p><a href="http://publish.illinois.edu/johnrgallagher/files/2015/10/BaseGraphicsCheatsheet.pdf">University of Illinois</a></p></li>
+<li><p><a href="https://blog.revolutionanalytics.com/2015/01/some-basics-for-base-graphics.html">A microsoft version</a></p></li>
+<li><p><a href="http://www.gastonsanchez.com/visually-enforced/resources/2015/09/22/R-cheat-sheet-graphical-parameters/">A blog post</a></p></li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probability-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
